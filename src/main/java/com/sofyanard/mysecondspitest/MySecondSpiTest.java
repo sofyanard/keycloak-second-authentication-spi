@@ -30,6 +30,9 @@ public class MySecondSpiTest  implements Authenticator {
 
         log.info("just want to write a log !!!");
 
+        // Tambahkan custom message ke form
+        authenticationFlowContext.form().setAttribute("customMessage", "My custom message from backend");
+
         authenticationFlowContext.success();
     }
 
