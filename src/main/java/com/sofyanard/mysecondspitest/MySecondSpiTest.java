@@ -34,17 +34,7 @@ public class MySecondSpiTest  implements Authenticator {
         // Tambahkan custom message ke form
         authenticationFlowContext.form().setAttribute("customMessage", "My custom message from backend");
 
-        // Teruskan ke halaman login
-        Response challenge = authenticationFlowContext.form()
-            .createForm("login.ftl"); // atau login-custom.ftl kalau kamu pakai template baru
-
-        log.info("log before challenge !!!");
-        
-        authenticationFlowContext.challenge(challenge);
-
-        log.info("log after challenge !!!");
-
-        // authenticationFlowContext.success();
+        authenticationFlowContext.success();
     }
 
     public void action(AuthenticationFlowContext authenticationFlowContext) {
